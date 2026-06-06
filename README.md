@@ -1,6 +1,16 @@
 # WebSSH — Plugin para LibreNMS
 
+![PHP](https://img.shields.io/badge/PHP-8.1%2B-blue)
+![LibreNMS](https://img.shields.io/badge/LibreNMS-compatible-green)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 Plugin que integra un **cliente SSH web** directamente en LibreNMS, permitiendo abrir sesiones SSH a los dispositivos monitoreados desde el navegador sin necesidad de un cliente SSH externo. **No modifica ningún archivo del núcleo de LibreNMS.**
+
+## Screenshots
+
+> Agrega tus capturas de pantalla aquí.
+> Puedes subir imágenes a la carpeta `screenshots/` del repositorio y referenciarlas así:
+> `![WebSSH](screenshots/webssh.png)`
 
 ---
 
