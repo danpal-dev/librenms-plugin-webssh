@@ -47,6 +47,8 @@ chown -R librenms:librenms /opt/librenms/app/Plugins/WebSSH
 
 ### Actualizar
 
+> Repositorio: https://github.com/danpal-dev/librenms-plugin-webssh
+
 ```bash
 cd /opt/librenms/app/Plugins/WebSSH
 git pull
