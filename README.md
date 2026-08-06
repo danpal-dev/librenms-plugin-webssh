@@ -50,6 +50,9 @@ chown -R librenms:librenms /opt/librenms/app/Plugins/WebSSH
 ```bash
 cd /opt/librenms/app/Plugins/WebSSH
 git pull
+chown -R librenms:librenms .
+sudo -u librenms php artisan view:cache
+sudo -u librenms php artisan cache:clear
 ```
 
 ### Desinstalar
