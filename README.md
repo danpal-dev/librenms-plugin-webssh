@@ -74,6 +74,21 @@ rm -rf /opt/librenms/app/Plugins/WebSSH
 - PHP 8.1+
 - Servidor WebSocket SSH accesible en la URL de LibreNMS en la ruta `/ws/ssh`.
 
+## Base de datos
+
+El plugin **no crea tablas nuevas**. Usa tablas estándar de LibreNMS:
+
+| Tabla | Uso | Columnas escritas |
+|---|---|---|
+| `devices_attribs` | Credenciales SSH por dispositivo | `attrib_type` = `webssh_username` · `webssh_password` · `webssh_port` |
+| `plugins` | Configuración global (usuario, puerto, rol) | `settings` (JSON, contraseña cifrada con `APP_KEY`) |
+
+Para eliminar todos los datos del plugin al desinstalar:
+
+```sql
+DELETE FROM devices_attribs WHERE attrib_type IN ('webssh_username','webssh_password','webssh_port');
+```
+
 ---
 
 ## Autor
