@@ -4,6 +4,7 @@ namespace App\Plugins\WebSSH;
 
 use App\Models\Plugin;
 use App\Plugins\Hooks\SettingsHook;
+use App\Plugins\WebSSH\Http\WebSSHDeviceCredController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -23,15 +24,15 @@ class Settings extends SettingsHook
             Route::middleware(['web', 'auth', 'can:admin'])
                 ->group(function (): void {
                     Route::get('webssh/device/{device}/creds',
-                        [\App\Http\Controllers\WebSSHDeviceCredController::class, 'show'])
+                        [WebSSHDeviceCredController::class, 'show'])
                         ->name('webssh.device.creds.show');
 
                     Route::post('webssh/device/{device}/creds',
-                        [\App\Http\Controllers\WebSSHDeviceCredController::class, 'update'])
+                        [WebSSHDeviceCredController::class, 'update'])
                         ->name('webssh.device.creds.update');
 
                     Route::delete('webssh/device/{device}/creds',
-                        [\App\Http\Controllers\WebSSHDeviceCredController::class, 'destroy'])
+                        [WebSSHDeviceCredController::class, 'destroy'])
                         ->name('webssh.device.creds.destroy');
                 });
         }

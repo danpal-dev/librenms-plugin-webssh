@@ -1,0 +1,18 @@
+[Unit]
+Description=WebSSH WebSocket server for LibreNMS
+After=network.target mysql.service mariadb.service
+
+[Service]
+Type=simple
+User=librenms
+Group=librenms
+WorkingDirectory=/opt/librenms
+ExecStart=/usr/bin/python3 /opt/librenms/app/Plugins/WebSSH/webssh-server.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=librenms-webssh
+
+[Install]
+WantedBy=multi-user.target
