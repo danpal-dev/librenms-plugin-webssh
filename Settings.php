@@ -12,9 +12,9 @@ class Settings extends SettingsHook
 {
     public string $view = 'resources.views.settings';
 
-    public function authorize(\Illuminate\Contracts\Auth\Authenticatable $user): bool
+    public function authorize(?\Illuminate\Contracts\Auth\Authenticatable $user): bool
     {
-        return $user->can('admin');
+        return $user !== null && $user->can('admin');
     }
 
     public function __construct()

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.so
+*.egg-info/
+*.log
+storage/
+logs/
+tmp/
+.idea/
+.vscode/
+.DS_Store
+.screenshots/*.png
+screenshots/*.png
+!screenshots/.gitkeep
+.env
+.webssh_secret

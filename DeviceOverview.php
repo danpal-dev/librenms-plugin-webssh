@@ -12,9 +12,15 @@ class DeviceOverview extends DeviceOverviewHook
 {
     public string $view = 'resources.views.device-overview';
 
-    public function authorize(User $user, Device $device): bool
+    public function authorize(?User $user, Device $device): bool
     {
-        // Deshabilitado: no mostrar en la visión general del dispositivo
+        if ($user === null) {
+            return false;
+        }
+        // Mantener comportamiento upstream: desactivado por defecto en overview.
+        // Puede habilitarse si se desea integrar la tarjeta de terminal SSH
+        // directamente en la página del dispositivo: cambiar return false por:
+        //   return $user->can('view', $device);
         return false;
     }
 
